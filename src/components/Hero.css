@@ -1,0 +1,241 @@
+*::selection {
+  color: #f7ad00;
+  background-color: #fff;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueUltraLight';
+  src: url('src/assets/fonts/Helvetica Neue LT 25 Ultra Light copy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueUltraLightExtended';
+  src: url('src/assets/fonts/Helvetica Neue LT 43 Light Extended.ttf') format('truetype');
+  font-weight: 200;
+}
+
+body, html {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main {
+  position: relative;
+  background-color: #f7ad00;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'HelveticaNeueUltraLight', sans-serif;
+}
+
+/* Overlay centered in triangle */
+.overlay-text {
+  position: absolute;
+  top: 60%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay-text h1 {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 100;
+  margin: 0;
+}
+
+.overlay-text h1 span {
+  color: #fff;
+  font-weight: 500;
+  font-size: 5rem;
+}
+
+.overlay-text p {
+  width: 50%;
+  margin-left: 63%;
+  margin-top: -20px;
+  font-size: 1.5rem;
+  color: #0b3d91;
+  font-family: 'HelveticaNeueUltraLightExtended', sans-serif;
+}
+
+/* Bottom message centered at bottom */
+.bottom-text {
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+  text-align: justify;
+  font-size: 1.5rem;
+  font-family: 'HelveticaNeueUltraLightExtended', sans-serif;
+}
+
+.bottom-text p {
+  margin-left: 63%;
+}
+
+/* Fade-in transition for image */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+/* Smooth triangle rotation */
+polygon {
+  transition: transform 0.6s ease-out;
+}
+
+/* Header layout */
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'HelveticaNeueUltraLightExtended', sans-serif;
+}
+
+.hamburger {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Off-canvas menu */
+.offcanvas {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #000;
+  color: #ccc;
+  padding: 2rem;
+  transition: right 0.4s ease;
+  z-index: 20;
+}
+
+.nav-open .offcanvas {
+  right: 0;
+}
+
+.offcanvas .close {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.offcanvas ul {
+  list-style: none;
+  padding: 60px 0 0;
+  margin: 0;
+}
+
+.offcanvas li {
+  margin: 1.2rem 0;
+  font-size: 1.2rem;
+  font-family: 'HelveticaNeueUltraLightExtended', sans-serif;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  svg {
+    width: 90%;
+    height: auto;
+  }
+
+  .overlay-text {
+    top: 65%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .overlay-text h1 {
+    font-size: 3rem;
+  }
+
+  .overlay-text h1 span {
+    font-size: 4rem;
+  }
+
+  .overlay-text p {
+    width: 60%;
+    margin: 0.5rem auto 0;
+    font-size: 1.3rem;
+    margin-top: -10px;
+    text-align: center;
+  }
+
+  .bottom-text {
+    font-size: 1.3rem;
+    padding: 0 5vw;
+    text-align: center;
+  }
+
+  .bottom-text p {
+    margin: 0.4rem auto;
+  }
+}
+
+@media (max-width: 600px) {
+  svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay-text {
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .overlay-text h1 {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  .overlay-text h1 span {
+    font-size: 2.8rem;
+    max-width: 100%;
+  }
+
+  .overlay-text p {
+    font-size: 1rem;
+    text-align: start;
+    margin-left: -40%;
+    margin-bottom: 20px;
+  }
+
+  .bottom-text {
+    font-size: 1rem;
+    padding: 0 5vw;
+  }
+
+  .bottom-text p {
+    font-size: 0.95rem;
+    margin: 0.3rem auto;
+    text-align: justify;
+  }
+}
+
+
